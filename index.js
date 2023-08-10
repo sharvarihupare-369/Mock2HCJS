@@ -3,7 +3,9 @@ const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 require("dotenv").config()
+const cors = require("cors")
 
+server.use(cors())
 server.use(middlewares)
 server.use(router)
 
